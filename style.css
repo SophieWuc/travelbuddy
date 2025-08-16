@@ -1,0 +1,27 @@
+body {
+  background: black;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 2rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+button:disabled {
+  background: grey;
+  cursor: not-allowed;
+}
+
+img {
+  max-width: 90%;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
