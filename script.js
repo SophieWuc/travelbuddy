@@ -7,17 +7,97 @@ let interval = 4 * 1000; // for testing
 
 const questions = [
   {
-    text: "How tall is the Eiffel Tower (in metres)?",
-    answer: "330",
+    text: "What’s the Danish word for hedgehog (one word)?",
+    answer: "Pindsvin",
     image: "assets/hedgehog1.jpg"
   },
   {
-    text: "What’s 5 x 7?",
-    answer: "35",
+    text: "How often did we visit the gym together (integer)?",
+    answer: "5",
     image: "assets/hedgehog2.jpg"
   },
-  // add more here...
+  {
+    text: "Who ruled as king of Denmark from c. 958 – c. 986 (first name space surname)?",
+    answer: "Harald Bluetooth",
+    image: "assets/hedgehog3.jpg"
+  },
+  {
+    text: "If I ate one cinnamon bun every day how many years would it take me to eat 10000 (rounded integer)?",
+    answer: "27",
+    image: "assets/hedgehog4.jpg"
+  },
+  {
+    text: "What is the name of the bike rental app we used to feel like flying (one word)?",
+    answer: "Lime",
+    image: "assets/hedgehog5.jpg"
+  },
+  {
+    text: "How many beer drinks did I see you have on the Friday night we went from Student House to Lecoq to Paradis (integer)?",
+    answer: "6",
+    image: "assets/hedgehog6.jpg"
+  },
+  {
+    text: "What is the first name of our questionable Malaysian Aarhus royalty (one word)?",
+    answer: "Harits",
+    image: "assets/hedgehog7.jpg"
+  },
+  {
+    text: "How many delicious cakes did James get from the Føtex store? (integer)",
+    answer: "2",
+    image: "assets/hedgehog8.jpg"
+  },
+  {
+    text: "In which country is Akshat pursuing his studies (one word)?",
+    answer: "Australia",
+    image: "assets/hedgehog9.jpg"
+  },
+  {
+    text: "What is the first name of the person in Aarhus who you deemed to be too intelligent for his own good, noticing things before others did (one word)?",
+    answer: "Kieron",
+    image: "assets/hedgehog10.jpg"
+  },
+  {
+    text: "How many kilometres did Sofia run when we met her after she finished her run (integer)?",
+    answer: "18",
+    image: "assets/hedgehog11.jpg"
+  },
+  {
+    text: "What is the name of your true hair colour (one word)?",
+    answer: "Blonde",
+    image: "assets/hedgehog12.jpg"
+  },
+  {
+    text: "Has James sent a picture of his new haircut yet (yes / no)?",
+    answer: "No",
+    image: "assets/hedgehog13.jpg"
+  },
+  {
+    text: "How many hedgehogs did we see together during one of our night walks (integer)?",
+    answer: "5",
+    image: "assets/hedgehog14.jpg"
+  },
+  {
+    text: "If you jumped into Aarhus Harbour every day in 2026, how many days would you freeze your toes off (integer)?",
+    answer: "365",
+    image: "assets/hedgehog15.jpg"
+  },
+  {
+    text: "How many nights did Melodi sleep over at my place (integer)?",
+    answer: "2",
+    image: "assets/hedgehog16.jpg"
+  },
+  {
+    text: "What was the best sweet at the street food market that we both got to try (two words)?",
+    answer: "Ice Cream",
+    image: "assets/hedgehog17.jpg"
+  },
+  {
+    text: "How many questions did you answer, including this one (integer)?",
+    answer: "18",
+    image: "assets/hedgehog18.jpg"
+  }
 ];
+
 
 // ========================
 // STATE
@@ -110,9 +190,9 @@ function checkAnswer(index) {
 function showImage(index) {
   const q = questions[index];
   app.innerHTML = `
-    <h2>Unlocked!</h2>
+    <h2>Awesome, reward image unlocked!</h2>
     <img src="${q.image}" alt="Reward image"/>
-    <p>Confirm once you’ve seen it to continue!</p>
+    <p>Confirm once you’ve seen the picture to continue!</p>
     <button onclick="confirmImage(${index})">Confirm</button>
   `;
 }
@@ -163,7 +243,7 @@ function render() {
   if (nextIndex < questions.length) {
     showQuestion(nextIndex);
   } else {
-    app.innerHTML = "<h2>All done! 🎉</h2><p>You’ve unlocked everything, good job! Hopefully you successfully survived the flight by now!</p>";
+    app.innerHTML = "<h2>You are amazing James, all done! 🎉</h2><p>You’ve unlocked every single picture, good job! Hopefully you successfully survived the flight by now!</p>";
   }
 }
 
