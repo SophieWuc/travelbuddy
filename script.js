@@ -2,8 +2,8 @@
 // CONFIG
 // ========================
 const PASSWORD = "jamesisgoingtosurvivethisflight"; // change as you like
-// let interval = 60 * 60 * 1000; // 1h in ms
-let interval = 4 * 1000; // for testing
+let interval = 60 * 60 * 1000; // 1h in ms
+// let interval = 4 * 1000; // for testing
 
 const questions = [
   {
@@ -136,7 +136,7 @@ function showIntro() {
   app.innerHTML = `
     <h1>Heya there James!</h1>
     <p>This site will ask you questions every hour. 
-    Answer correctly to unlock ... you will see hehe 
+    Answer correctly to unlock ... you will see hehe! 
     Let's begin!</p>
     <button onclick="startFirstQuestion()">Start</button>
   `;
