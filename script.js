@@ -56,7 +56,7 @@ function showIntro() {
   app.innerHTML = `
     <h1>Heya there James!</h1>
     <p>This site will ask you questions every hour. 
-    Answer correctly to unlock ... you will see :D 
+    Answer correctly to unlock ... you will see hehe 
     Let's begin!</p>
     <button onclick="startFirstQuestion()">Start</button>
   `;
@@ -88,14 +88,22 @@ function checkAnswer(index) {
   if (input.toLowerCase() === questions[index].answer.toLowerCase()) {
     showImage(index);
   } else {
-    document.getElementById("feedback").innerText = "Wrong! Smh, wait 15s...";
+    let countdown = 7;
+    document.getElementById("feedback").innerText = `Wrong! Smh, wait ${countdown}s...`;
     lockout = true;
     document.getElementById("answerBtn").disabled = true;
-    setTimeout(() => {
-      lockout = false;
-      document.getElementById("feedback").innerText = "";
-      document.getElementById("answerBtn").disabled = false;
-    }, 15000);
+
+    const timer = setInterval(() => {
+      countdown--;
+      if (countdown > 0) {
+        document.getElementById("feedback").innerText = `Wrong! Smh, wait ${countdown}s...`;
+      } else {
+        clearInterval(timer);
+        lockout = false;
+        document.getElementById("feedback").innerText = "";
+        document.getElementById("answerBtn").disabled = false;
+      }
+    }, 1000);
   }
 }
 
