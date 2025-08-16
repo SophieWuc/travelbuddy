@@ -54,9 +54,9 @@ function checkPassword() {
 
 function showIntro() {
   app.innerHTML = `
-    <h1>Weeelcomeee!</h1>
-    <p>This app will ask you questions every hour. 
-    Answer correctly to unlock ... you will see. 
+    <h1>Heya there James!</h1>
+    <p>This site will ask you questions every hour. 
+    Answer correctly to unlock ... you will see :D 
     Let's begin!</p>
     <button onclick="startFirstQuestion()">Start</button>
   `;
@@ -66,7 +66,7 @@ function startFirstQuestion() {
   state.unlocked = -1;
   state.nextUnlock = null;
   saveState();
-  render();
+  showQuestion(0); // go directly to first question
 }
 
 function showQuestion(index) {
