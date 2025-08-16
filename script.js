@@ -1,20 +1,20 @@
 // ========================
 // CONFIG
 // ========================
-const PASSWORD = "hedgehog"; // change as you like
-let interval = 60 * 60 * 1000; // 1h in ms
-// interval = 30 * 1000; // for testing
+const PASSWORD = "jamesisgoingtosurvivethisflight"; // change as you like
+// let interval = 60 * 60 * 1000; // 1h in ms
+let interval = 4 * 1000; // for testing
 
 const questions = [
   {
     text: "How tall is the Eiffel Tower (in metres)?",
     answer: "330",
-    image: "assets/hedgehog.jpg"
+    image: "assets/hedgehog1.jpg"
   },
   {
     text: "What’s 5 x 7?",
     answer: "35",
-    image: "assets/example2.jpg"
+    image: "assets/hedgehog2.jpg"
   },
   // add more here...
 ];
@@ -54,9 +54,9 @@ function checkPassword() {
 
 function showIntro() {
   app.innerHTML = `
-    <h1>Welcome!</h1>
+    <h1>Weeelcomeee!</h1>
     <p>This app will ask you questions every hour. 
-    Answer correctly to unlock fun pictures. 
+    Answer correctly to unlock ... you will see. 
     Let's begin!</p>
     <button onclick="startFirstQuestion()">Start</button>
   `;
@@ -88,7 +88,7 @@ function checkAnswer(index) {
   if (input.toLowerCase() === questions[index].answer.toLowerCase()) {
     showImage(index);
   } else {
-    document.getElementById("feedback").innerText = "Wrong! Wait 15s...";
+    document.getElementById("feedback").innerText = "Wrong! Smh, wait 15s...";
     lockout = true;
     document.getElementById("answerBtn").disabled = true;
     setTimeout(() => {
@@ -104,7 +104,7 @@ function showImage(index) {
   app.innerHTML = `
     <h2>Unlocked!</h2>
     <img src="${q.image}" alt="Reward image"/>
-    <p>Confirm once you’ve seen it.</p>
+    <p>Confirm once you’ve seen it to continue!</p>
     <button onclick="confirmImage(${index})">Confirm</button>
   `;
 }
@@ -155,7 +155,7 @@ function render() {
   if (nextIndex < questions.length) {
     showQuestion(nextIndex);
   } else {
-    app.innerHTML = "<h2>All done! 🎉</h2><p>You’ve unlocked everything.</p>";
+    app.innerHTML = "<h2>All done! 🎉</h2><p>You’ve unlocked everything, good job! Hopefully you successfully survived the flight by now!</p>";
   }
 }
 
