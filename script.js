@@ -199,7 +199,14 @@ function showImage(index) {
 
 function confirmImage(index) {
   state.unlocked = index;
-  state.nextUnlock = Date.now() + interval;
+
+  // Only set nextUnlock if there is another question
+  if (index + 1 < questions.length) {
+    state.nextUnlock = Date.now() + interval;
+  } else {
+    state.nextUnlock = null;
+  }
+
   saveState();
   render();
 }
